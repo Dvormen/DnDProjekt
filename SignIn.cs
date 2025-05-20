@@ -17,11 +17,16 @@ namespace DnDProjekt
             InitializeComponent();
             password.PasswordChar = '*';
             passwordCheck.PasswordChar = '*';
+            this.FormClosed += new FormClosedEventHandler(SignClosed);
+        }
+        private void SignClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             new LogInForm().Show();
         }
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevButton = new Button();
             SignIn = new Button();
             Title = new Label();
             username = new TextBox();
@@ -39,16 +38,6 @@
             PasswordCheckL = new Label();
             LoginLink = new LinkLabel();
             SuspendLayout();
-            // 
-            // DevButton
-            // 
-            DevButton.Location = new Point(348, 264);
-            DevButton.Name = "DevButton";
-            DevButton.Size = new Size(75, 23);
-            DevButton.TabIndex = 0;
-            DevButton.Text = "DevButton";
-            DevButton.UseVisualStyleBackColor = true;
-            DevButton.Click += DevButton_Click;
             // 
             // SignIn
             // 
@@ -142,7 +131,6 @@
             Controls.Add(username);
             Controls.Add(Title);
             Controls.Add(SignIn);
-            Controls.Add(DevButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SignInForm";
             Text = "Manager";
@@ -152,7 +140,6 @@
 
         #endregion
 
-        private Button DevButton;
         private Button SignIn;
         private Label Title;
         private TextBox username;
