@@ -28,12 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            LogIn = new Button();
+            SignIn = new LinkLabel();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            Username = new Label();
+            Password = new Label();
+            Title = new Label();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // LogIn
+            // 
+            LogIn.AccessibleName = "";
+            LogIn.Location = new Point(177, 244);
+            LogIn.Name = "LogIn";
+            LogIn.Size = new Size(96, 23);
+            LogIn.TabIndex = 0;
+            LogIn.Text = "Log In";
+            LogIn.UseVisualStyleBackColor = true;
+            LogIn.Click += LogIn_Click;
+            // 
+            // SignIn
+            // 
+            SignIn.AccessibleName = "";
+            SignIn.AutoSize = true;
+            SignIn.LinkColor = Color.Black;
+            SignIn.Location = new Point(205, 270);
+            SignIn.Name = "SignIn";
+            SignIn.Size = new Size(43, 15);
+            SignIn.TabIndex = 1;
+            SignIn.TabStop = true;
+            SignIn.Text = "Sign In";
+            SignIn.LinkClicked += SignIn_LinkClicked;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(177, 199);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(177, 152);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 3;
+            // 
+            // Username
+            // 
+            Username.AutoSize = true;
+            Username.Location = new Point(111, 155);
+            Username.Name = "Username";
+            Username.Size = new Size(60, 15);
+            Username.TabIndex = 4;
+            Username.Text = "Username";
+            // 
+            // Password
+            // 
+            Password.AutoSize = true;
+            Password.Location = new Point(114, 202);
+            Password.Name = "Password";
+            Password.Size = new Size(57, 15);
+            Password.TabIndex = 5;
+            Password.Text = "Password";
+            // 
+            // Title
+            // 
+            Title.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Title.AutoSize = true;
+            Title.Location = new Point(82, 40);
+            Title.Name = "Title";
+            Title.Size = new Size(253, 15);
+            Title.TabIndex = 6;
+            Title.Text = "Welcome to DnD Character and Dice Manager!";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(57, 55);
+            label1.Name = "label1";
+            label1.Size = new Size(317, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Log In or Sign In to view and edit your characters and dices";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(431, 311);
+            Controls.Add(label1);
+            Controls.Add(Title);
+            Controls.Add(Password);
+            Controls.Add(Username);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(SignIn);
+            Controls.Add(LogIn);
+            Name = "Form1";
+            Text = "Log In";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button LogIn;
+        private LinkLabel SignIn;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label Username;
+        private Label Password;
+        private Label Title;
+        private Label label1;
     }
 }
