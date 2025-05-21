@@ -122,6 +122,7 @@
             DevButton.TabIndex = 8;
             DevButton.Text = "DevButton";
             DevButton.UseVisualStyleBackColor = true;
+            DevButton.Click += DevButton_Click;
             // 
             // LogInForm
             // 

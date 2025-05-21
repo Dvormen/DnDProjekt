@@ -20,8 +20,14 @@ namespace DnDProjekt
 
         private void SignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            Hide();
             new SignInForm().Show();
+        }
+
+        private void DevButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new HomePage().Show();
         }
     }
 }

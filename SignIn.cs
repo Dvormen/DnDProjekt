@@ -17,7 +17,7 @@ namespace DnDProjekt
             InitializeComponent();
             password.PasswordChar = '*';
             passwordCheck.PasswordChar = '*';
-            this.FormClosed += new FormClosedEventHandler(SignClosed);
+            FormClosed += new FormClosedEventHandler(SignClosed);
         }
         private void SignClosed(object sender, FormClosedEventArgs e)
         {
@@ -26,7 +26,7 @@ namespace DnDProjekt
 
         private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            Hide();
             new LogInForm().Show();
         }
     }
