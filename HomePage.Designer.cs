@@ -54,7 +54,7 @@
             button1.Name = "button1";
             button1.Size = new Size(29, 27);
             button1.TabIndex = 3;
-            button1.Text = "button1";
+            button1.Text = "🔍";
             button1.UseVisualStyleBackColor = true;
             // 
             // label1
