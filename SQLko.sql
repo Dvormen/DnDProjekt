@@ -1,6 +1,6 @@
 create table DnDUser(
 id int primary key identity(1,1),
-username varchar(50),
+username varchar(50) unique,
 passwd varchar(50)
 )
 
@@ -36,7 +36,11 @@ ch int
 --pozdìji pøidat možnost obrázku--
 )
 
-create table kostka(
+drop table DnDUser
+drop table DnDCharacter
+drop table kostka
+
+create table DnDkostka(
 id int primary key identity(1,1),
 id_user int foreign key references DnDUser(id),
 id_charakter int foreign key references DnDCharacter(id),

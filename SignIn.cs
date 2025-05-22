@@ -29,5 +29,28 @@ namespace DnDProjekt
             Hide();
             new LogInForm().Show();
         }
+
+        private void SignIn_Click(object sender, EventArgs e)
+        {
+            string jmeno = username.Text;
+            string heslo = password.Text;
+            string heslok = passwordCheck.Text;
+            if(heslo.Equals(heslok))
+            {
+                Ucet ucet = new Ucet(jmeno,heslo);
+                if (!ucet.pridat(ucet)) 
+                {
+                    Title.Text = "Toto uživatelské jméno již existuje";
+                }
+                else
+                {
+                    Title.Text = "Uživatel přidán";
+                }
+            }
+            else
+            {
+                Title.Text = "Hesla se neshodují";
+            }
+        }
     }
 }

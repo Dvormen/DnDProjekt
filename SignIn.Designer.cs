@@ -47,6 +47,7 @@
             SignIn.TabIndex = 1;
             SignIn.Text = "Sign In";
             SignIn.UseVisualStyleBackColor = true;
+            SignIn.Click += SignIn_Click;
             // 
             // Title
             // 

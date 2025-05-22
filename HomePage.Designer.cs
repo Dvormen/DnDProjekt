@@ -32,7 +32,6 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             textBox1 = new TextBox();
             vScrollBar1 = new VScrollBar();
             SuspendLayout();
@@ -65,6 +64,7 @@
             label1.Size = new Size(83, 15);
             label1.TabIndex = 4;
             label1.Text = "My Characters";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -74,15 +74,7 @@
             label2.Size = new Size(50, 15);
             label2.TabIndex = 5;
             label2.Text = "My Dice";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(739, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(49, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Settings";
+            label2.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -106,7 +98,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(vScrollBar1);
             Controls.Add(textBox1);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -123,7 +114,6 @@
         private Button button1;
         private Label label1;
         private Label label2;
-        private Label label3;
         private TextBox textBox1;
         private VScrollBar vScrollBar1;
     }

@@ -36,7 +36,6 @@
             Password = new Label();
             Title = new Label();
             label1 = new Label();
-            DevButton = new Button();
             SuspendLayout();
             // 
             // LogIn
@@ -114,22 +113,11 @@
             label1.TabIndex = 7;
             label1.Text = "Log In or Sign In to view and edit your characters and dices";
             // 
-            // DevButton
-            // 
-            DevButton.Location = new Point(356, 288);
-            DevButton.Name = "DevButton";
-            DevButton.Size = new Size(75, 23);
-            DevButton.TabIndex = 8;
-            DevButton.Text = "DevButton";
-            DevButton.UseVisualStyleBackColor = true;
-            DevButton.Click += DevButton_Click;
-            // 
             // LogInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(431, 311);
-            Controls.Add(DevButton);
             Controls.Add(label1);
             Controls.Add(Title);
             Controls.Add(Password);
@@ -155,6 +143,5 @@
         private Label Password;
         private Label Title;
         private Label label1;
-        private Button DevButton;
     }
 }
