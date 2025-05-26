@@ -30,7 +30,7 @@ namespace DnDProjekt
             new LogInForm().Show();
         }
 
-        private void SignIn_Click(object sender, EventArgs e)
+        private void SignIn_Click(object sender, EventArgs e)// heslo nesmí být nic
         {
             string jmeno = username.Text;
             string heslo = password.Text;
@@ -40,16 +40,16 @@ namespace DnDProjekt
                 Ucet ucet = new Ucet(jmeno,heslo);
                 if (!ucet.pridat(ucet)) 
                 {
-                    Title.Text = "Toto uživatelské jméno již existuje";
+                    MessageBox.Show("Toto uživatelské jméno již existuje");
                 }
                 else
                 {
-                    Title.Text = "Uživatel přidán";
+                    MessageBox.Show("Uživatel přidán");
                 }
             }
             else
             {
-                Title.Text = "Hesla se neshodují";
+                MessageBox.Show("Hesla se neshodují");
             }
         }
     }

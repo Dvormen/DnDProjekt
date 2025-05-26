@@ -13,18 +13,16 @@ namespace DnDProjekt
             Application.Exit();
         }
 
-        private void LogIn_Click(object sender, EventArgs e) // Až budu mít databázi, tak po kliknutí zkontroluje usery v databázi a jestli bude matchovat heslo tak ho pustí dál
+        private void LogIn_Click(object sender, EventArgs e)
         {
             Ucet ucet = new Ucet(UsernameBox.Text, PasswordBox.Text);
-            if (ucet.logIn(ucet)) 
+            string res = ucet.logIn(ucet);
+                MessageBox.Show(res);
+            if (res.Equals("Pøihlášeno"))
             {
                 Hide();
                 new HomePage().Show();
-            }
-            else 
-            {
-                Title.Text = "špatný login nebo heslo";
-            }
+            }   
         }
 
         private void SignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

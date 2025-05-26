@@ -1,7 +1,14 @@
 create table DnDUser(
 id int primary key identity(1,1),
+enc_id int foreign key references DnDEncrypt(id),
 username varchar(50) unique,
-passwd varchar(50)
+passwd varbinary(16)
+)
+
+create table DnDEncrypt(
+id int primary key identity(1,1),
+kv varbinary(16),
+vv varbinary(16)
 )
 
 create table DnDRace(
@@ -35,10 +42,6 @@ wis int,
 ch int
 --pozdìji pøidat možnost obrázku--
 )
-
-drop table DnDUser
-drop table DnDCharacter
-drop table kostka
 
 create table DnDkostka(
 id int primary key identity(1,1),
