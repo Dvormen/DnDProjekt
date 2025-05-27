@@ -26,13 +26,17 @@ namespace DnDProjekt
         private void label3_Click(object sender, EventArgs e)
         {
             Hide();
-            new HomePage().Show();
+            HomePage hp = new HomePage();
+            hp.Location = Location;
+            hp.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             Hide();
-            new MyCharacters().Show();
+            MyCharacters mch = new MyCharacters();
+            mch.Location = Location;
+            mch.Show();
         }
     }
 }

@@ -505,6 +505,7 @@
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CharacterCreation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CharacterCreation";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)HeightBox).EndInit();

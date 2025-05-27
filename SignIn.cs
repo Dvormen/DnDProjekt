@@ -27,7 +27,9 @@ namespace DnDProjekt
         private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            new LogInForm().Show();
+            LogInForm lif = new LogInForm();
+            lif.Location = Location;
+            lif.Show();
         }
 
         private void SignIn_Click(object sender, EventArgs e)// heslo nesmí být nic

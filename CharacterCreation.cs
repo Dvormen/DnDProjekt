@@ -31,7 +31,9 @@ namespace DnDProjekt
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
-            new MyCharacters().Show();
+            MyCharacters mch = new MyCharacters();
+            mch.Location = Location;
+            mch.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

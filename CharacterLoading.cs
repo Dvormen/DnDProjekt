@@ -1,0 +1,143 @@
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DnDProjekt
+{
+    internal class CharacterLoading
+    {
+        public void loadProUzivatele(FlowLayoutPanel flp)
+        {
+            string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter where id_user = @id";
+            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
+            command.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int charId = reader.GetInt32(0);
+                    string jmeno = reader.GetString(1);
+                    string prijmeni = reader.GetString(2);
+                    byte[] imageBytes = reader["obrazek"] as byte[];
+                    Panel itemPanel = new Panel
+                    {
+                        Width = 210,
+                        Height = 240,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Margin = new Padding(10),
+                        Tag = charId
+                    };
+                    PictureBox picture = new PictureBox
+                    {
+                        Width = 200,
+                        Height = 200,
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Cursor = Cursors.Hand,
+                        Left = 5,
+                        Top = 5
+                    };
+                    if (imageBytes != null && imageBytes.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        {
+                            picture.Image = Image.FromStream(ms);
+                        }
+                    }
+                    Label label = new Label
+                    {
+                        Text = $"{jmeno} {prijmeni}",
+                        Width = 200,
+                        Height = 30,
+                        Top = picture.Bottom + 5,
+                        Left = 5,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Cursor = Cursors.Hand
+                    };
+                    picture.Click += (s, e) =>
+                    {
+
+                    };
+                    label.Click += (s, e) =>
+                    {
+
+                    };
+                    itemPanel.Controls.Add(picture);
+                    itemPanel.Controls.Add(label);
+                    flp.Controls.Add(itemPanel);
+                }
+            }
+        }
+
+        public void loadProVsechny(FlowLayoutPanel flp)
+        {
+            string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter";
+            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
+            command.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int charId = reader.GetInt32(0);
+                    string jmeno = reader.GetString(1);
+                    string prijmeni = reader.GetString(2);
+                    byte[] imageBytes = reader["obrazek"] as byte[];
+                    Panel itemPanel = new Panel
+                    {
+                        Width = 210,
+                        Height = 240,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Margin = new Padding(10),
+                        Tag = charId
+                    };
+                    PictureBox picture = new PictureBox
+                    {
+                        Width = 200,
+                        Height = 200,
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        Cursor = Cursors.Hand,
+                        Left = 5,
+                        Top = 5
+                    };
+                    if (imageBytes != null && imageBytes.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        {
+                            picture.Image = Image.FromStream(ms);
+                        }
+                    }
+                    Label label = new Label
+                    {
+                        Text = $"{jmeno} {prijmeni}",
+                        Width = 200,
+                        Height = 30,
+                        Top = picture.Bottom + 5,
+                        Left = 5,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Cursor = Cursors.Hand
+                    };
+                    picture.Click += (s, e) =>
+                    {
+
+                    };
+                    label.Click += (s, e) =>
+                    {
+
+                    };
+                    itemPanel.Controls.Add(picture);
+                    itemPanel.Controls.Add(label);
+                    flp.Controls.Add(itemPanel);
+
+                }
+            }
+        }
+    }
+}
+
+
+
