@@ -28,12 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MyDice";
+            label3 = new Label();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label1 = new Label();
+            linkLabel1 = new LinkLabel();
+            SuspendLayout();
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 15);
+            label3.TabIndex = 18;
+            label3.Text = "Home";
+            label3.Click += label3_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(352, 6);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(458, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(29, 27);
+            button1.TabIndex = 15;
+            button1.Text = "🔍";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 15);
+            label1.TabIndex = 20;
+            label1.Text = "My Characters";
+            label1.Click += label1_Click;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Black;
+            linkLabel1.Location = new Point(12, 67);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(50, 15);
+            linkLabel1.TabIndex = 21;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "My Dice";
+            // 
+            // MyDice
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Name = "MyDice";
+            Text = "MyDice";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label3;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label1;
+        private LinkLabel linkLabel1;
     }
 }

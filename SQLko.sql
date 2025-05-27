@@ -34,21 +34,26 @@ vaha int,
 lore varchar(1000),
 max_Hp int,
 armor_class int,
-stre int,
-dex int,
-con int,
-inte int,
-wis int,
-ch int
---pozdìji pøidat možnost obrázku--
+strength int,
+dexterity int,
+constitution int,
+inteligence int,
+wisdom int,
+charisma int
+obrazek
 )
 
 create table DnDkostka(
 id int primary key identity(1,1),
 id_user int foreign key references DnDUser(id),
 id_charakter int foreign key references DnDCharacter(id),
+stat_id int foreign key references DnDStats(id),
 kvantita int,
 druh_kostky int,
-mod_kostka int,
+mod_kostka int
+)
+
+create table DnDStats(
+id int primary key identity(1,1),
 stat varchar(50)
 )

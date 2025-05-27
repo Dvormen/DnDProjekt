@@ -22,19 +22,16 @@ namespace DnDProjekt
             Application.Exit();
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            new MyCharacters().Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            new MyDice().Show();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace DnDProjekt
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public int Id { get; set; }
 
         public Ucet(string username, string password) 
         {
@@ -94,7 +95,11 @@ namespace DnDProjekt
             string message;
             if (ucet.Password.Equals(dekryptovaneheslo))
             {
-                 return "Přihlášeno";
+                string query4 = "select id from DnDUser where username = @username";
+                SqlCommand command4 = new SqlCommand(query4, Singleton.GetInstance());
+                command4.Parameters.Add(new("@username", ucet.Username));
+                Seshn.LoggedUcet.Id = Convert.ToInt32(command4.ExecuteScalar());
+                return "Přihlášeno";
             }
             else 
             {

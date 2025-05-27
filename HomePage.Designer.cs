@@ -33,7 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
-            vScrollBar1 = new VScrollBar();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // linkLabel1
@@ -83,20 +83,19 @@
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 7;
             // 
-            // vScrollBar1
+            // flowLayoutPanel1
             // 
-            vScrollBar1.Location = new Point(766, 47);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(25, 394);
-            vScrollBar1.TabIndex = 8;
-            vScrollBar1.Scroll += vScrollBar1_Scroll;
+            flowLayoutPanel1.Location = new Point(128, 36);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(600, 400);
+            flowLayoutPanel1.TabIndex = 8;
             // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(vScrollBar1);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -115,6 +114,6 @@
         private Label label1;
         private Label label2;
         private TextBox textBox1;
-        private VScrollBar vScrollBar1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

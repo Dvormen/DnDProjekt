@@ -15,6 +15,24 @@ namespace DnDProjekt
         public MyDice()
         {
             InitializeComponent();
+            FormClosed += new FormClosedEventHandler(mDClosed);
+        }
+
+        private void mDClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new HomePage().Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new MyCharacters().Show();
         }
     }
 }
