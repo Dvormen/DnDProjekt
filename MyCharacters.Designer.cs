@@ -47,6 +47,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
             label2.Location = new Point(12, 67);
             label2.Name = "label2";
             label2.Size = new Size(50, 15);
@@ -67,6 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
             label3.Location = new Point(12, 9);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
@@ -93,6 +95,7 @@
             pridat.TabIndex = 15;
             pridat.Text = "Přidat postavu";
             pridat.UseVisualStyleBackColor = true;
+            pridat.Click += pridat_Click;
             // 
             // flowLayoutPanel1
             // 

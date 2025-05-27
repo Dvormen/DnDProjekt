@@ -98,6 +98,7 @@ namespace DnDProjekt
                 string query4 = "select id from DnDUser where username = @username";
                 SqlCommand command4 = new SqlCommand(query4, Singleton.GetInstance());
                 command4.Parameters.Add(new("@username", ucet.Username));
+                Seshn.LoggedUcet = ucet;
                 Seshn.LoggedUcet.Id = Convert.ToInt32(command4.ExecuteScalar());
                 return "Přihlášeno";
             }

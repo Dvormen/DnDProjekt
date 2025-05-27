@@ -38,6 +38,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
             label3.Location = new Point(12, 9);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
@@ -64,6 +65,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
             label1.Location = new Point(12, 37);
             label1.Name = "label1";
             label1.Size = new Size(83, 15);

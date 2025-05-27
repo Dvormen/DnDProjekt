@@ -21,17 +21,24 @@ id int primary key identity(1,1),
 druh varchar(50)
 )
 
+create table DnDGender(
+id int primary key identity(1,1),
+druh varchar(50)
+)
+
 create table DnDCharacter(
 id int primary key identity(1,1),
 id_user int foreign key references DnDUser(id),
 rasa int foreign key references DnDRace(id),
 classa int foreign key references DnDClass(id),
-jmeno varchar(50),
-prijmeni varchar(50),
+subClassa int foreign key references DnDClass(id),
+gender_id int foreign key references DnDGender(id),
+jmeno varchar(100),
+prijmeni varchar(100),
 vek int,
 vyska int,
 vaha int,
-lore varchar(1000),
+lore varchar(8000),
 max_Hp int,
 armor_class int,
 strength int,
@@ -39,8 +46,8 @@ dexterity int,
 constitution int,
 inteligence int,
 wisdom int,
-charisma int
-obrazek
+charisma int,
+obrazek varbinary(max)
 )
 
 create table DnDkostka(
