@@ -16,7 +16,7 @@ namespace DnDProjekt
         {
             InitializeComponent();
             FormClosed += new FormClosedEventHandler(mChClosed);
-            new CharacterLoading().loadProUzivatele(flowLayoutPanel1);
+            new CharacterLoading().loadProUzivatele(flowLayoutPanel1,this);
         }
 
         private void mChClosed(object sender, FormClosedEventArgs e)
@@ -32,9 +32,7 @@ namespace DnDProjekt
         private void label3_Click(object sender, EventArgs e)
         {
             Hide();
-            HomePage hp = new HomePage();
-            hp.Location = Location;
-            hp.Show();
+            new HomePage().Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -46,7 +44,7 @@ namespace DnDProjekt
         private void pridat_Click(object sender, EventArgs e)
         {
             Hide();
-            new CharacterCreation().Show();
+            new CharacterCreation(0,false).Show();
         }
     }
 }

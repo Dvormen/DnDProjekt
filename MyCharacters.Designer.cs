@@ -89,9 +89,9 @@
             // 
             // pridat
             // 
-            pridat.Location = new Point(12, 402);
+            pridat.Location = new Point(4, 399);
             pridat.Name = "pridat";
-            pridat.Size = new Size(112, 36);
+            pridat.Size = new Size(91, 36);
             pridat.TabIndex = 15;
             pridat.Text = "Přidat postavu";
             pridat.UseVisualStyleBackColor = true;
@@ -99,16 +99,17 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(130, 38);
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(101, 35);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(600, 400);
+            flowLayoutPanel1.Size = new Size(717, 400);
             flowLayoutPanel1.TabIndex = 16;
             // 
             // MyCharacters
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(834, 451);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(pridat);
             Controls.Add(linkLabel2);
@@ -118,6 +119,7 @@
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MyCharacters";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MyCharacters";
             ResumeLayout(false);
             PerformLayout();

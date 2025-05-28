@@ -87,16 +87,17 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(128, 36);
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(101, 35);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(600, 400);
+            flowLayoutPanel1.Size = new Size(717, 400);
             flowLayoutPanel1.TabIndex = 8;
             // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(834, 451);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -105,6 +106,7 @@
             Controls.Add(linkLabel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomePage";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             ResumeLayout(false);
             PerformLayout();

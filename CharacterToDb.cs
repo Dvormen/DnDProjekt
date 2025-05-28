@@ -35,7 +35,7 @@ namespace DnDProjekt
             command1.Parameters.Add(new("@int", i));
             command1.Parameters.Add(new("@wis", wis));
             command1.Parameters.Add(new("@ch", ch));
-            command1.Parameters.Add("@obr", SqlDbType.VarBinary).Value = obrDoDb;
+            command1.Parameters.Add("@obr", SqlDbType.VarBinary).Value = obrDoDb ?? (object)DBNull.Value;
             command1.ExecuteNonQuery();
         }
         public static byte[] obrazekDoDb(Image obrazek)
@@ -46,6 +46,36 @@ namespace DnDProjekt
                 obrazek.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 return ms.ToArray();
             }
+        }
+
+        public void vlozeniUpraveny(int id, int rasa, int classa, int subclassa, int gender, string jmeno, string prijmeni, decimal vek, decimal vyska, decimal vaha, string lore, decimal hp, decimal ac, decimal str, decimal dex, decimal con, decimal i, decimal wis, decimal ch, Image obr) 
+        {
+            string query = "update DnDCharacter set rasa = @rasa, classa = @classa, subClassa = @subclassa, gender_id = @gender, jmeno = @jmeno," +
+                " prijmeni = @prijmeni, vek = @vek, vyska = @vyska, vaha = @vaha, lore = @lore, max_Hp = @hp, armor_class = @ac, strength = @str," +
+                " constitution = @con, dexterity = @dex, inteligence = @int, wisdom = @wis, charisma = @ch, obrazek = @obr where id = @id";
+            byte[] obrDoDb = obrazekDoDb(obr);
+            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
+            command.Parameters.Add(new("@id", id));
+            command.Parameters.Add(new("@rasa", rasa));
+            command.Parameters.Add(new("@classa", classa));
+            command.Parameters.Add(new("@subclassa", subclassa));
+            command.Parameters.Add(new("@gender", gender));
+            command.Parameters.Add(new("@jmeno", jmeno));
+            command.Parameters.Add(new("@prijmeni", prijmeni));
+            command.Parameters.Add(new("@vek", vek));
+            command.Parameters.Add(new("@vyska", vyska));
+            command.Parameters.Add(new("@vaha", vaha));
+            command.Parameters.Add(new("@lore", lore));
+            command.Parameters.Add(new("@hp", hp));
+            command.Parameters.Add(new("@ac", ac));
+            command.Parameters.Add(new("@str", str));
+            command.Parameters.Add(new("@dex", dex));
+            command.Parameters.Add(new("@con", con));
+            command.Parameters.Add(new("@int", i));
+            command.Parameters.Add(new("@wis", wis));
+            command.Parameters.Add(new("@ch", ch));
+            command.Parameters.Add("@obr", SqlDbType.VarBinary).Value = obrDoDb ?? (object)DBNull.Value;
+            command.ExecuteNonQuery();
         }
 
         public void naplneniRas(ComboBox cb) 

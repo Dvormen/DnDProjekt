@@ -98,7 +98,7 @@
             // pictureBox1
             // 
             pictureBox1.AllowDrop = true;
-            pictureBox1.Location = new Point(588, 12);
+            pictureBox1.Location = new Point(602, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
             pictureBox1.TabIndex = 1;
@@ -175,7 +175,7 @@
             // 
             // Hp
             // 
-            Hp.Location = new Point(622, 218);
+            Hp.Location = new Point(640, 218);
             Hp.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             Hp.Name = "Hp";
             Hp.Size = new Size(44, 23);
@@ -183,49 +183,49 @@
             // 
             // Ac
             // 
-            Ac.Location = new Point(729, 218);
+            Ac.Location = new Point(741, 218);
             Ac.Name = "Ac";
             Ac.Size = new Size(44, 23);
             Ac.TabIndex = 11;
             // 
             // Str
             // 
-            Str.Location = new Point(622, 247);
+            Str.Location = new Point(640, 247);
             Str.Name = "Str";
             Str.Size = new Size(44, 23);
             Str.TabIndex = 12;
             // 
             // i
             // 
-            i.Location = new Point(729, 247);
+            i.Location = new Point(741, 247);
             i.Name = "i";
             i.Size = new Size(44, 23);
             i.TabIndex = 13;
             // 
             // dex
             // 
-            dex.Location = new Point(622, 276);
+            dex.Location = new Point(640, 276);
             dex.Name = "dex";
             dex.Size = new Size(44, 23);
             dex.TabIndex = 14;
             // 
             // wis
             // 
-            wis.Location = new Point(729, 276);
+            wis.Location = new Point(741, 272);
             wis.Name = "wis";
             wis.Size = new Size(44, 23);
             wis.TabIndex = 15;
             // 
             // con
             // 
-            con.Location = new Point(622, 305);
+            con.Location = new Point(640, 305);
             con.Name = "con";
             con.Size = new Size(44, 23);
             con.TabIndex = 16;
             // 
             // ch
             // 
-            ch.Location = new Point(729, 305);
+            ch.Location = new Point(741, 305);
             ch.Name = "ch";
             ch.Size = new Size(44, 23);
             ch.TabIndex = 17;
@@ -323,7 +323,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(592, 220);
+            label9.Location = new Point(611, 220);
             label9.Name = "label9";
             label9.Size = new Size(23, 15);
             label9.TabIndex = 28;
@@ -332,7 +332,7 @@
             // a
             // 
             a.AutoSize = true;
-            a.Location = new Point(592, 249);
+            a.Location = new Point(613, 249);
             a.Name = "a";
             a.Size = new Size(21, 15);
             a.TabIndex = 29;
@@ -341,7 +341,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(588, 280);
+            label11.Location = new Point(608, 280);
             label11.Name = "label11";
             label11.Size = new Size(26, 15);
             label11.TabIndex = 30;
@@ -350,7 +350,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(585, 307);
+            label12.Location = new Point(602, 307);
             label12.Name = "label12";
             label12.Size = new Size(29, 15);
             label12.TabIndex = 31;
@@ -359,7 +359,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(700, 220);
+            label13.Location = new Point(714, 220);
             label13.Name = "label13";
             label13.Size = new Size(21, 15);
             label13.TabIndex = 32;
@@ -368,7 +368,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(700, 249);
+            label14.Location = new Point(714, 249);
             label14.Name = "label14";
             label14.Size = new Size(21, 15);
             label14.TabIndex = 33;
@@ -377,7 +377,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(695, 280);
+            label15.Location = new Point(709, 277);
             label15.Name = "label15";
             label15.Size = new Size(26, 15);
             label15.TabIndex = 34;
@@ -386,7 +386,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(699, 307);
+            label16.Location = new Point(713, 307);
             label16.Name = "label16";
             label16.Size = new Size(22, 15);
             label16.TabIndex = 35;
@@ -459,7 +459,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(834, 451);
             Controls.Add(label10);
             Controls.Add(label20);
             Controls.Add(label19);

@@ -128,6 +128,7 @@
             Controls.Add(LogIn);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LogInForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Manager";
             ResumeLayout(false);
             PerformLayout();

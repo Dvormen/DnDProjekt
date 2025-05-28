@@ -10,7 +10,7 @@ namespace DnDProjekt
 {
     internal class CharacterLoading
     {
-        public void loadProUzivatele(FlowLayoutPanel flp)
+        public void loadProUzivatele(FlowLayoutPanel flp, Form f)
         {
             string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter where id_user = @id";
             SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
@@ -60,20 +60,23 @@ namespace DnDProjekt
                     };
                     picture.Click += (s, e) =>
                     {
-
+                        f.Hide();
+                        new ViewingForm(charId, true).Show();
                     };
                     label.Click += (s, e) =>
                     {
-
+                        f.Hide();
+                        new ViewingForm(charId, true).Show();
                     };
                     itemPanel.Controls.Add(picture);
                     itemPanel.Controls.Add(label);
                     flp.Controls.Add(itemPanel);
+                    
                 }
             }
         }
 
-        public void loadProVsechny(FlowLayoutPanel flp)
+        public void loadProVsechny(FlowLayoutPanel flp, Form f)
         {
             string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter";
             SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
@@ -123,11 +126,13 @@ namespace DnDProjekt
                     };
                     picture.Click += (s, e) =>
                     {
-
+                        f.Hide();
+                        new ViewingForm(charId,false).Show();
                     };
                     label.Click += (s, e) =>
                     {
-
+                        f.Hide();
+                        new ViewingForm(charId,false).Show();
                     };
                     itemPanel.Controls.Add(picture);
                     itemPanel.Controls.Add(label);

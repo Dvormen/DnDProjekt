@@ -21,18 +21,14 @@ namespace DnDProjekt
             if (res.Equals("Pøihlášeno"))
             {
                 Hide();
-                HomePage hp = new HomePage();
-                hp.Location = Location;
-                hp.Show();
+                new HomePage().Show();
             }   
         }
 
         private void SignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            SignInForm sif = new SignInForm();
-            sif.Location = Location;
-            sif.Show();
+            new SignInForm().Show();
         }
     }
 }

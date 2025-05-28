@@ -27,9 +27,7 @@ namespace DnDProjekt
         private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            LogInForm lif = new LogInForm();
-            lif.Location = Location;
-            lif.Show();
+            new LogInForm().Show();
         }
 
         private void SignIn_Click(object sender, EventArgs e)// heslo nesmí být nic
@@ -47,6 +45,8 @@ namespace DnDProjekt
                 else
                 {
                     MessageBox.Show("Uživatel přidán");
+                    Hide();
+                    new LogInForm().Show();
                 }
             }
             else

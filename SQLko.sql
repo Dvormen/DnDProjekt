@@ -26,6 +26,8 @@ id int primary key identity(1,1),
 druh varchar(50)
 )
 
+update DnDCharacter set
+
 create table DnDCharacter(
 id int primary key identity(1,1),
 id_user int foreign key references DnDUser(id),

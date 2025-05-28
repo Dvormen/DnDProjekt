@@ -16,7 +16,7 @@ namespace DnDProjekt
         {
             InitializeComponent();
             FormClosed += new FormClosedEventHandler(hPClosed);
-            new CharacterLoading().loadProVsechny(flowLayoutPanel1);
+            new CharacterLoading().loadProVsechny(flowLayoutPanel1, this);
         }
         private void hPClosed(object sender, FormClosedEventArgs e)
         {
@@ -26,17 +26,13 @@ namespace DnDProjekt
         private void label1_Click(object sender, EventArgs e)
         {
             Hide();
-            MyCharacters mch = new MyCharacters();
-            mch.Location = Location;
-            mch.Show();
+            new MyCharacters().Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
             Hide();
-            MyDice md = new MyDice();
-            md.Location = Location;
-            md.Show();
+            new MyDice().Show();
         }
     }
 }

@@ -88,13 +88,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(834, 451);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Name = "MyDice";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MyDice";
             ResumeLayout(false);
             PerformLayout();
