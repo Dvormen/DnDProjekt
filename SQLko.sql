@@ -26,6 +26,7 @@ id int primary key identity(1,1),
 druh varchar(50)
 )
 
+select * from DnDCharacter inner join DnDUser on DnDUser.id = DnDCharacter.id_user where jmeno like '%d%' or prijmeni like '%d%' or DnDUser.username like '%d%'
 
 create table DnDCharacter(
 id int primary key identity(1,1),
@@ -56,6 +57,7 @@ id int primary key identity(1,1),
 id_user int foreign key references DnDUser(id),
 id_charakter int foreign key references DnDCharacter(id),
 stat_id int foreign key references DnDStats(id),
+nazev varchar(100),
 kvantita int,
 druh_kostky int,
 mod_kostka int

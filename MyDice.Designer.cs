@@ -33,6 +33,9 @@
             button1 = new Button();
             label1 = new Label();
             linkLabel1 = new LinkLabel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            pridat = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label3
@@ -85,11 +88,41 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "My Dice";
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(105, 39);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(717, 400);
+            flowLayoutPanel1.TabIndex = 23;
+            // 
+            // pridat
+            // 
+            pridat.Location = new Point(8, 403);
+            pridat.Name = "pridat";
+            pridat.Size = new Size(91, 36);
+            pridat.TabIndex = 22;
+            pridat.Text = "Přidat kostku";
+            pridat.UseVisualStyleBackColor = true;
+            pridat.Click += pridat_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(24, 198);
+            label2.Name = "label2";
+            label2.Size = new Size(332, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Zatím nefunguje, zítra dám druhou verzi kde budou i kostky :)";
+            // 
             // MyDice
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(834, 451);
+            Controls.Add(label2);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(pridat);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -109,5 +142,8 @@
         private Button button1;
         private Label label1;
         private LinkLabel linkLabel1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button pridat;
+        private Label label2;
     }
 }

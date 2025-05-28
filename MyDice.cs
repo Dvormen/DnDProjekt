@@ -39,5 +39,11 @@ namespace DnDProjekt
         {
 
         }
+
+        private void pridat_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new DiceCreation().Show();
+        }
     }
 }
