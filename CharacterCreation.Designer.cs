@@ -506,7 +506,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CharacterCreation";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CharacterCreation";
+            Text = "Character Editing";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)HeightBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)vahaBox).EndInit();

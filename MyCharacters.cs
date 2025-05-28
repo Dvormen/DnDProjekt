@@ -16,7 +16,7 @@ namespace DnDProjekt
         {
             InitializeComponent();
             FormClosed += new FormClosedEventHandler(mChClosed);
-            new CharacterLoading().loadProUzivatele(flowLayoutPanel1,this);
+            new CharacterLoading().loadProUzivatele(flowLayoutPanel1,this,new CharacterLoading().loadQuery(false));
         }
 
         private void mChClosed(object sender, FormClosedEventArgs e)
@@ -26,7 +26,7 @@ namespace DnDProjekt
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            new CharacterLoading().loadProUzivatele(flowLayoutPanel1, this, new Search().searchCharacters(textBox1.Text));
         }
 
         private void label3_Click(object sender, EventArgs e)

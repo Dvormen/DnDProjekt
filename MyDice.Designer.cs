@@ -61,6 +61,7 @@
             button1.TabIndex = 15;
             button1.Text = "🔍";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -96,7 +97,7 @@
             Controls.Add(button1);
             Name = "MyDice";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MyDice";
+            Text = "My Dice";
             ResumeLayout(false);
             PerformLayout();
         }

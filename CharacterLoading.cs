@@ -10,12 +10,8 @@ namespace DnDProjekt
 {
     internal class CharacterLoading
     {
-        public void loadProUzivatele(FlowLayoutPanel flp, Form f)
+        public void loadProUzivatele(FlowLayoutPanel flp, Form f, SqlCommand command)
         {
-            string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter where id_user = @id";
-            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
-            command.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
-
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -76,11 +72,24 @@ namespace DnDProjekt
             }
         }
 
-        public void loadProVsechny(FlowLayoutPanel flp, Form f)
+        public SqlCommand loadQuery(bool all) 
         {
-            string query = "select id, jmeno, prijmeni, obrazek from DnDCharacter";
+            string query;
+            if(all)
+            {
+                query = "select id, jmeno, prijmeni, obrazek from DnDCharacter";
+            }
+            else {
+                query = "select id, jmeno, prijmeni, obrazek from DnDCharacter where id_user = @id";
+            }
             SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
             command.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
+            return command;
+        }
+
+        public void loadProVsechny(FlowLayoutPanel flp, Form f, SqlCommand command)
+        {
+            
 
             using (SqlDataReader reader = command.ExecuteReader())
             {

@@ -490,7 +490,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ViewingForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Manager";
+            Text = "Viewing";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

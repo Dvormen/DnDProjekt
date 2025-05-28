@@ -16,7 +16,7 @@ namespace DnDProjekt
         {
             InitializeComponent();
             FormClosed += new FormClosedEventHandler(hPClosed);
-            new CharacterLoading().loadProVsechny(flowLayoutPanel1, this);
+            new CharacterLoading().loadProVsechny(flowLayoutPanel1, this, new CharacterLoading().loadQuery(true));
         }
         private void hPClosed(object sender, FormClosedEventArgs e)
         {
@@ -33,6 +33,12 @@ namespace DnDProjekt
         {
             Hide();
             new MyDice().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            new CharacterLoading().loadProVsechny(flowLayoutPanel1, this, new Search().searchCharacters(textBox1.Text));
         }
     }
 }

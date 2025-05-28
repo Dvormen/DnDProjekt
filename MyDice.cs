@@ -34,5 +34,10 @@ namespace DnDProjekt
             Hide();
             new MyCharacters().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

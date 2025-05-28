@@ -135,7 +135,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SignInForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Manager";
+            Text = "Sign In";
             ResumeLayout(false);
             PerformLayout();
         }

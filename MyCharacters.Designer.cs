@@ -120,7 +120,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MyCharacters";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MyCharacters";
+            Text = "My Characters";
             ResumeLayout(false);
             PerformLayout();
         }

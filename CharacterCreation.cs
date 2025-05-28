@@ -69,6 +69,8 @@ namespace DnDProjekt
                     HeightBox.Value, vahaBox.Value, LoreBox.Text, Hp.Value, Ac.Value, Str.Value, dex.Value, con.Value, i.Value, wis.Value, ch.Value,
                     pictureBox1.Image);
                 MessageBox.Show("Postava přidána");
+                Hide();
+                new MyCharacters().Show();
             }
         }
         public void loadNaEdit(int id)
