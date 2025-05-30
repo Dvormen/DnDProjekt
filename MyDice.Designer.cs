@@ -35,7 +35,6 @@
             linkLabel1 = new LinkLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pridat = new Button();
-            label2 = new Label();
             SuspendLayout();
             // 
             // label3
@@ -106,21 +105,11 @@
             pridat.UseVisualStyleBackColor = true;
             pridat.Click += pridat_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(24, 198);
-            label2.Name = "label2";
-            label2.Size = new Size(332, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Zatím nefunguje, zítra dám druhou verzi kde budou i kostky :)";
-            // 
             // MyDice
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(834, 451);
-            Controls.Add(label2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(pridat);
             Controls.Add(linkLabel1);
@@ -144,6 +133,5 @@
         private LinkLabel linkLabel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button pridat;
-        private Label label2;
     }
 }

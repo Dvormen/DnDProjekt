@@ -26,7 +26,7 @@ id int primary key identity(1,1),
 druh varchar(50)
 )
 
-select * from DnDCharacter inner join DnDUser on DnDUser.id = DnDCharacter.id_user where jmeno like '%d%' or prijmeni like '%d%' or DnDUser.username like '%d%'
+
 
 create table DnDCharacter(
 id int primary key identity(1,1),

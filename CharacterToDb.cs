@@ -112,5 +112,23 @@ namespace DnDProjekt
             cb.DisplayMember = "druh";
             cb.ValueMember = "id";
         }
+
+        public bool nameCheck(string name, string surname) 
+        {
+            string query1 = "select jmeno, prijmeni from DnDCharacter where id = @id";
+            SqlCommand command1 = new SqlCommand(query1, Singleton.GetInstance());
+            command1.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
+            SqlDataReader r = command1.ExecuteReader();
+            string jmeno = r.GetString(0);
+            string prijmeni = r.GetString(1);
+            if (jmeno.Equals(name) && prijmeni.Equals(surname)) 
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
     }
 }

@@ -57,10 +57,13 @@ namespace DnDProjekt
 
         private void addToDb() 
         {
-            button2.Text = "test";
             if (LoreBox.Text.Length > 8000)
             {
                 MessageBox.Show("Moc dlouhej lore Zro");
+            }
+            else if (new CharacterToDb().nameCheck(NameBox.Text, SurnameBox.Text))
+            {
+                MessageBox.Show("Tvá postava s tímto jménem již existuje");
             }
             else
             {
@@ -115,7 +118,7 @@ namespace DnDProjekt
             reader.Close();
         }
 
-        private void editChar() 
+        private void editChar() // když se změní postava, tak se změní stat na kostce
         {
             new CharacterToDb().vlozeniUpraveny(Id, Convert.ToInt32(RaceBox.SelectedValue), Convert.ToInt32(ClassBox.SelectedValue),
                 Convert.ToInt32(SubclassBox.SelectedValue), Convert.ToInt32(GenderBox.SelectedValue),NameBox.Text, SurnameBox.Text, vekBox.Value,

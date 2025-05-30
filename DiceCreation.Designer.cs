@@ -166,6 +166,7 @@
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "DiceCreation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dice Creation";
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
