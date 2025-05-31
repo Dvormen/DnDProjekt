@@ -13,6 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// tato třída se stará o funkce na stránce character creation
+    /// </summary>
     public partial class CharacterCreation : Form
     {
         private bool Edit {  get; set; }
@@ -33,17 +36,33 @@ namespace DnDProjekt
                 button2.Text = "Upravit";
             }
         }
+
+        /// <summary>
+        /// Zavře apkilaci pokud se zavře okco
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chCClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// otevře okno a schová tuto formu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
             new MyCharacters().Show();
         }
 
+        /// <summary>
+        /// buď přidá nebo upraví postavu v databázi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if(!Edit){ 
@@ -55,6 +74,9 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// přidá postavu do databáze
+        /// </summary>
         private void addToDb() 
         {
             if (LoreBox.Text.Length > 8000)
@@ -76,6 +98,11 @@ namespace DnDProjekt
                 new MyCharacters().Show();
             }
         }
+
+        /// <summary>
+        /// Loadne hodnoty postav z databáze
+        /// </summary>
+        /// <param name="id"> id postavy </param>
         public void loadNaEdit(int id)
         {
             string query = "select rasa,classa,subClassa,gender_id,jmeno,prijmeni,vek,vyska,vaha,lore,max_hp,armor_class,strength,dexterity," +
@@ -118,7 +145,11 @@ namespace DnDProjekt
             reader.Close();
         }
 
-        private void editChar() // když se změní postava, tak se změní stat na kostce
+
+        /// <summary>
+        /// updatuje postavu v databázi
+        /// </summary>
+        private void editChar()
         {
             new CharacterToDb().vlozeniUpraveny(Id, Convert.ToInt32(RaceBox.SelectedValue), Convert.ToInt32(ClassBox.SelectedValue),
                 Convert.ToInt32(SubclassBox.SelectedValue), Convert.ToInt32(GenderBox.SelectedValue),NameBox.Text, SurnameBox.Text, vekBox.Value,
@@ -128,6 +159,11 @@ namespace DnDProjekt
             new MyCharacters().Show();
         }
 
+        /// <summary>
+        /// umožňuje vložit obrázky do pictureboxu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -136,6 +172,11 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// načte obrázek a dá ho do picture boxu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_DragDrop(object sender, DragEventArgs e)
         {
             string[] obr = (string[])e.Data.GetData(DataFormats.FileDrop);

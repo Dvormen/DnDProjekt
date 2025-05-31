@@ -8,8 +8,34 @@ using System.Threading.Tasks;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Třída, která propojuje postavy s databází
+    /// </summary>
     internal class CharacterToDb
     {
+        /// <summary>
+        /// Metoda která přidá postavu do databáze
+        /// </summary>
+        /// <param name="id"> id uživatele </param>
+        /// <param name="rasa"> rasa postavy </param>
+        /// <param name="classa"> classa postavy </param>
+        /// <param name="subclassa"> subclassa postavy </param>
+        /// <param name="gender"> pohlaví postavy </param>
+        /// <param name="jmeno"> jméno postavy </param>
+        /// <param name="prijmeni"> prijmení postavy </param>
+        /// <param name="vek"> věk postavy </param>
+        /// <param name="vyska"> výška postavy </param>
+        /// <param name="vaha"> váha postavy </param>
+        /// <param name="lore"> příběh postavy </param>
+        /// <param name="hp"> maximální životy postavy </param>
+        /// <param name="ac"> brnění postvy </param>
+        /// <param name="str"> síla postavy </param>
+        /// <param name="dex"> obratnost postavy </param>
+        /// <param name="con"> výdrž postavy </param>
+        /// <param name="i"> inteligence postavy </param>
+        /// <param name="wis"> moudrost postavy </param>
+        /// <param name="ch"> charisma postavy </param>
+        /// <param name="obr"> obrázek postavy </param>
         public void pridat(int id,int rasa, int classa, int subclassa, int gender, string jmeno, string prijmeni, decimal vek, decimal vyska, decimal vaha, string lore, decimal hp, decimal ac, decimal str, decimal dex, decimal con, decimal i, decimal wis, decimal ch, Image obr) 
         {
             string query1 = "insert into DnDCharacter (id_user,rasa,classa,subClassa,gender_id,jmeno,prijmeni,vek,vyska,vaha,lore,max_hp,armor_class,strength,dexterity,constitution,inteligence,wisdom,charisma,obrazek) " +
@@ -38,6 +64,12 @@ namespace DnDProjekt
             command1.Parameters.Add("@obr", SqlDbType.VarBinary).Value = obrDoDb ?? (object)DBNull.Value;
             command1.ExecuteNonQuery();
         }
+
+        /// <summary>
+        /// Metoda která přemění obrázek na array bytu
+        /// </summary>
+        /// <param name="obrazek"></param>
+        /// <returns> array bytů obrázku </returns>
         public static byte[] obrazekDoDb(Image obrazek)
         {
             if (obrazek == null) return null;
@@ -48,6 +80,29 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// Upravení postavy v databázi
+        /// </summary>
+        /// <param name="id"> id uživatele </param>
+        /// <param name="rasa"> rasa postavy </param>
+        /// <param name="classa"> classa postavy </param>
+        /// <param name="subclassa"> subclassa postavy </param>
+        /// <param name="gender"> pohlaví postavy </param>
+        /// <param name="jmeno"> jméno postavy </param>
+        /// <param name="prijmeni"> prijmení postavy </param>
+        /// <param name="vek"> věk postavy </param>
+        /// <param name="vyska"> výška postavy </param>
+        /// <param name="vaha"> váha postavy </param>
+        /// <param name="lore"> příběh postavy </param>
+        /// <param name="hp"> maximální životy postavy </param>
+        /// <param name="ac"> brnění postvy </param>
+        /// <param name="str"> síla postavy </param>
+        /// <param name="dex"> obratnost postavy </param>
+        /// <param name="con"> výdrž postavy </param>
+        /// <param name="i"> inteligence postavy </param>
+        /// <param name="wis"> moudrost postavy </param>
+        /// <param name="ch"> charisma postavy </param>
+        /// <param name="obr"> obrázek postavy </param>
         public void vlozeniUpraveny(int id, int rasa, int classa, int subclassa, int gender, string jmeno, string prijmeni, decimal vek, decimal vyska, decimal vaha, string lore, decimal hp, decimal ac, decimal str, decimal dex, decimal con, decimal i, decimal wis, decimal ch, Image obr) 
         {
             string query2 = "select strength, dexterity, constitution, inteligence, wisdom, charisma from DnDCharacter where id = @id";
@@ -119,6 +174,12 @@ namespace DnDProjekt
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Metoda která upraví modifier na kostce po změně statu postavy
+        /// </summary>
+        /// <param name="stat"></param>
+        /// <param name="statS"></param>
+        /// <param name="id"></param>
         public void upraveniMod(decimal stat,string statS, int id) 
         {
             string query2 = "select id from DnDStats where stat = @stat";
@@ -134,6 +195,10 @@ namespace DnDProjekt
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// naplní combobox rasama z databáze
+        /// </summary>
+        /// <param name="cb"> combobox na naplnění </param>
         public void naplneniRas(ComboBox cb) 
         {
             string query1 = "select id, druh from DnDRace";
@@ -146,6 +211,10 @@ namespace DnDProjekt
             cb.ValueMember = "id";
         }
 
+        /// <summary>
+        /// naplní combobox classama z databáze
+        /// </summary>
+        /// <param name="cb"> combobox na naplnění </param>
         public void naplneniClass(ComboBox cb)
         {
             string query1 = "select id, druh from DnDClass";
@@ -157,6 +226,11 @@ namespace DnDProjekt
             cb.DisplayMember = "druh";
             cb.ValueMember = "id";
         }
+
+        /// <summary>
+        /// naplní combobox pohlavíma z databáze
+        /// </summary>
+        /// <param name="cb"> combobox na naplnění </param>
         public void naplneniPohlavi(ComboBox cb)
         {
             string query1 = "select id, druh from DnDGender";
@@ -169,6 +243,12 @@ namespace DnDProjekt
             cb.ValueMember = "id";
         }
 
+        /// <summary>
+        /// kontroluje jestli v databázi už není postava se stejným jménem od jedoho autora
+        /// </summary>
+        /// <param name="name"> jméno přidávané postavy </param>
+        /// <param name="surname"> příjmení přidávané postavy </param>
+        /// <returns> true nebo false podle toho jestli tam je postava se stejným jménem </returns>
         public bool nameCheck(string name, string surname) 
         {
             string query1 = "select jmeno, prijmeni from DnDCharacter where id = @id";

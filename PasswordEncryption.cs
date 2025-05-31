@@ -10,8 +10,18 @@ using Aes = System.Security.Cryptography.Aes;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Třída, která krypruje hesla
+    /// </summary>
     internal class PasswordEncryption
     {
+        /// <summary>
+        /// Kryptuje hesla
+        /// </summary>
+        /// <param name="passwd"> heslo </param>
+        /// <param name="klic"> klíč </param>
+        /// <param name="vektor"> vektor </param>
+        /// <returns> zakryptované heslo </returns>
         public byte[] kryptovani(string passwd, byte[] klic, byte[] vektor)
         {
             byte[] kryptovanyText;
@@ -34,6 +44,13 @@ namespace DnDProjekt
             return kryptovanyText;
         }
 
+        /// <summary>
+        /// Odkryptuje heslo
+        /// </summary>
+        /// <param name="kryptovanyText"> kryprované heslo </param>
+        /// <param name="klic"> klíč </param>
+        /// <param name="vektor"> vektor </param>
+        /// <returns>odkryptované heslo </returns>
         public string dekryptovani(byte[] kryptovanyText, byte[] klic, byte[] vektor)
         {
             string passwd = String.Empty;

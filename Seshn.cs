@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// tato třída je na zapamatování nynějšího uživatele
+    /// </summary>
     internal class Seshn
     {
         public static Ucet LoggedUcet { get; set; }

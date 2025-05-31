@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Třída, která dělá nové učivatele a přidává je do databáze
+    /// </summary>
     public partial class SignInForm : Form
     {
         public SignInForm()
@@ -19,17 +22,33 @@ namespace DnDProjekt
             passwordCheck.PasswordChar = '*';
             FormClosed += new FormClosedEventHandler(SignClosed);
         }
+        /// <summary>
+        /// tato metoda po zavření formy zavře celou aplikaci
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Tato metoda otevře novej form log in a schodá tento form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
             new LogInForm().Show();
         }
 
+
+        /// <summary>
+        /// tato metoda zkontroluje jestli jsou uživatelovy přihlašovací údaje validní a přidá ho do databáze
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignIn_Click(object sender, EventArgs e)
         {
             string jmeno = username.Text;

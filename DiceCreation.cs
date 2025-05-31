@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// tato třída řeší funkce na formě dice creation
+    /// </summary>
     public partial class DiceCreation : Form
     {
+
         public DiceCreation()
         {
             InitializeComponent();
@@ -22,17 +26,32 @@ namespace DnDProjekt
 
         }
 
+        /// <summary>
+        /// zavře aplikaci pokud se zavře okno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// otevře nové okno a schová staré
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Hide();
             new MyDice().Show();
         }
 
+        /// <summary>
+        /// přidá kostku do databáze
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if(Convert.ToInt32(comboBox1.SelectedValue) == 1) 
@@ -57,6 +76,11 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// kontroluje vybrané možnostzi v comboboxu a dynamicky ukazuje combobox 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             new Kostky().modVisibility(comboBox1,comboBox2);

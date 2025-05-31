@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Tato třída funguje jako okno kde se načítá postava aby se na ní uživatel mohl podívat
+    /// </summary>
     public partial class ViewingForm : Form
     {
         int Id { get; set; }
@@ -23,11 +26,21 @@ namespace DnDProjekt
             loadPage(Id, a);
         }
 
+        /// <summary>
+        /// Metoda, která zajistí to, že po zavření okna se zavře celý program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Metoda, který načte všechny informace o dané postavě
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="edit"></param>
         private void loadPage(int id, bool edit)
         {
             string query = "select DnDUser.username, DnDRace.druh, DnDClass.druh, subclass.druh, DnDGender.druh, jmeno, prijmeni, vek, vyska, vaha, lore, " +
@@ -82,18 +95,33 @@ namespace DnDProjekt
             reader.Close();
         }
 
+        /// <summary>
+        /// Po stisknutí tlačitka se otevře Home Page form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
             new HomePage().Show();
         }
 
+        /// <summary>
+        /// Po stisknutí tlačítka se otevře  character creation form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Hide();
             new CharacterCreation(Id, true).Show();
         }
 
+        /// <summary>
+        /// Po stisknutí tlačítka se program zeptá uživatele jestli chce smazat postavu a jestli ano tak ji smaže
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show(

@@ -9,8 +9,15 @@ using static System.Net.WebRequestMethods;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// tato třída obstarává funkce s kostkama
+    /// </summary>
     internal class Kostky
     {
+        /// <summary>
+        /// tato metoda naplní combobox modifierama z databáze
+        /// </summary>
+        /// <param name="cb"> combobox na naplnění </param>
         public void naplneniMod(ComboBox cb) 
         {
             string query1 = "select id, stat from DnDStats";
@@ -23,6 +30,10 @@ namespace DnDProjekt
             cb.ValueMember = "id";
         }
 
+        /// <summary>
+        /// tato metoda naplní combobox postavama uživatele 
+        /// </summary>
+        /// <param name="cb"> combobox na naplnění </param>
         public void naplneniChar(ComboBox cb)
         {
             string query1 = "select id, jmeno, prijmeni from DnDCharacter where id_user = @id";
@@ -37,6 +48,11 @@ namespace DnDProjekt
             cb.ValueMember = "id";
         }
 
+        /// <summary>
+        /// tahle metoda obstarává viditelnos comboboxu 2 (chci aby byl vidět jen když je urřitá hodnota v comboboxu 1)
+        /// </summary>
+        /// <param name="cb1"> combobox s modifierama </param>
+        /// <param name="cb2"> combobox s postavama </param>
         public void modVisibility(ComboBox cb1, ComboBox cb2) 
         {
             if (cb1.SelectedValue != null)
@@ -52,6 +68,16 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// Tato metoda uloží kostku do databáze podle toho, jestli má modifier nebo podle statu a charakteru
+        /// </summary>
+        /// <param name="nonMod"> boolean - rozhoduje jestli je tam modifier nebo ne</param>
+        /// <param name="cb"> combobox 1 s modifierama </param>
+        /// <param name="cb2"> combobox 2 s postavama </param>
+        /// <param name="nazev"> název kostky </param>
+        /// <param name="kva"> počet kostek </param>
+        /// <param name="druh"> druh kostek </param>
+        /// <param name="mod"> modifier kostky </param>
         public void kostkaDoDb(bool nonMod,ComboBox cb,ComboBox cb2,string nazev, int kva, int druh, int mod) 
         {
             if (nonMod) {
@@ -90,6 +116,13 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// Zjistí potřebné věci pro spočítání stat modifieru
+        /// </summary>
+        /// <param name="jmeno"> jméno postavy ke které je kostka připnuta </param>
+        /// <param name="prijmeni"> prijmeni postavy ke které je kostka připnuta </param>
+        /// <param name="cb"> combobox s modifierama </param>
+        /// <returns> modifier na kostce </returns>
         public int calculateMod(string jmeno, string prijmeni, ComboBox cb) 
         {
             int stat = cb.SelectedIndex - 2;
@@ -108,12 +141,21 @@ namespace DnDProjekt
             
         }
 
+        /// <summary>
+        /// Spočítá modifier
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public int GetMod(decimal value) 
         {
             double mod = Math.Floor((Convert.ToInt32(value) - 10) / 2.0);
             return (int)Math.Clamp(mod, -5, 10);
         }
 
+        /// <summary>
+        /// Vypíše kostky uživatele
+        /// </summary>
+        /// <returns> command pro výpis kostek </returns>
         public SqlCommand basicCommand() 
         {
             string query = "select id, nazev, kvantita, druh_kostky, mod_kostka from DnDKostka where id_user = @id";
@@ -122,6 +164,11 @@ namespace DnDProjekt
             return command;
         }
 
+        /// <summary>
+        /// Načte kostky do flow panelu
+        /// </summary>
+        /// <param name="flp"> flowpanel na naplnění </param>
+        /// <param name="command"> command podle kterého se ukážou kostky </param>
         public void loadKostek(FlowLayoutPanel flp, SqlCommand command) 
         {
             SqlDataReader reader = command.ExecuteReader();

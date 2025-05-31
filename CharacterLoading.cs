@@ -8,8 +8,17 @@ using System.Windows.Forms;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Třída která načtítá postavy 
+    /// </summary>
     internal class CharacterLoading
     {
+        /// <summary>
+        /// Načte postavy podle toho, které postavy jsou uživatele
+        /// </summary>
+        /// <param name="flp"> flowpanel na naplnšní </param>
+        /// <param name="f"> forma která se má zavřít při otevírání nové formy </param>
+        /// <param name="command"> command podle kterého se vypíší postavy </param>
         public void loadProUzivatele(FlowLayoutPanel flp, Form f, SqlCommand command)
         {
             using (SqlDataReader reader = command.ExecuteReader())
@@ -72,6 +81,11 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// nastaví command na pošle ho
+        /// </summary>
+        /// <param name="all"> boolean jestli je výpis pro všechny nebo ne </param>
+        /// <returns> command s výpisem postav </returns>
         public SqlCommand loadQuery(bool all) 
         {
             string query;
@@ -87,6 +101,12 @@ namespace DnDProjekt
             return command;
         }
 
+        /// <summary>
+        /// Načte všechny postavy 
+        /// </summary>
+        /// <param name="flp"> flow panel na naplnění </param>
+        /// <param name="f"> forma která se má zavřít při otevření nové formy </param>
+        /// <param name="command"> command na naplnění flowpanelu </param>
         public void loadProVsechny(FlowLayoutPanel flp, Form f, SqlCommand command)
         {
             

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace DnDProjekt
 {
+    /// <summary>
+    /// Třída, která řeší věci ohledně účtu (přihlašování a tvoření účtů)
+    /// </summary>
     internal class Ucet
     {
         public string Username { get; set; }
@@ -22,9 +25,13 @@ namespace DnDProjekt
             Password = password;            
         }
 
+        /// <summary>
+        /// Přidá účet, pokud účet již není v databázi
+        /// </summary>
+        /// <param name="ucet"> vstupní účet </param>
+        /// <returns></returns>
         public bool pridat(Ucet ucet) 
         {
-            // zkontroluje jestli existuje uživatel
             string query = "select count(*) from DnDUser where username = @jmeno";
             SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
             command.Parameters.Add(new("@jmeno", ucet.Username));
@@ -32,9 +39,8 @@ namespace DnDProjekt
             {
                 return false;
             }
-            else // jestli neexistuje, přidá ho
+            else
             {
-                //generování kryptovani
                 PasswordEncryption pe = new PasswordEncryption();
                 string query2 = "insert into DnDEncrypt(kv, vv) values(@klic, @vektor)";
                 SqlCommand command2 = new SqlCommand(query2, Singleton.GetInstance());
@@ -47,7 +53,6 @@ namespace DnDProjekt
                 command2.Parameters.Add(new("@vektor", vektor));
                 command2.ExecuteNonQuery();
 
-                //přidání usera
                 string query3 = "insert into DnDUser(username, passwd, enc_id) values(@jmeno, @heslo,(select id from DnDEncrypt where kv = @klic and vv = @vektor))";
                 SqlCommand command3 = new SqlCommand(query3, Singleton.GetInstance());
                 byte[] kryptovaneheslo = pe.kryptovani(ucet.Password,klic,vektor);
@@ -60,6 +65,11 @@ namespace DnDProjekt
             }
         }
 
+        /// <summary>
+        /// medota, která přihlásí uživatele, jestli zadal správně hodnoty
+        /// </summary>
+        /// <param name="ucet"> vstupní účet </param>
+        /// <returns> String, který funguje jako zpráva pro uživatele </returns>
         public string logIn(Ucet ucet) 
         {
             string query0 = "select count(*) from DnDUser where username = @username";
