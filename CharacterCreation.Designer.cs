@@ -153,9 +153,11 @@
             // 
             HeightBox.Location = new Point(413, 317);
             HeightBox.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            HeightBox.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             HeightBox.Name = "HeightBox";
             HeightBox.Size = new Size(104, 23);
             HeightBox.TabIndex = 7;
+            HeightBox.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // vahaBox
             // 
@@ -177,58 +179,74 @@
             // 
             Hp.Location = new Point(640, 218);
             Hp.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            Hp.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             Hp.Name = "Hp";
             Hp.Size = new Size(44, 23);
             Hp.TabIndex = 10;
+            Hp.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // Ac
             // 
             Ac.Location = new Point(741, 218);
+            Ac.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             Ac.Name = "Ac";
             Ac.Size = new Size(44, 23);
             Ac.TabIndex = 11;
+            Ac.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // Str
             // 
             Str.Location = new Point(640, 247);
+            Str.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             Str.Name = "Str";
             Str.Size = new Size(44, 23);
             Str.TabIndex = 12;
+            Str.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // i
             // 
             i.Location = new Point(741, 247);
+            i.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             i.Name = "i";
             i.Size = new Size(44, 23);
             i.TabIndex = 13;
+            i.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // dex
             // 
             dex.Location = new Point(640, 276);
+            dex.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             dex.Name = "dex";
             dex.Size = new Size(44, 23);
             dex.TabIndex = 14;
+            dex.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // wis
             // 
-            wis.Location = new Point(741, 272);
+            wis.Location = new Point(741, 275);
+            wis.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             wis.Name = "wis";
             wis.Size = new Size(44, 23);
             wis.TabIndex = 15;
+            wis.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // con
             // 
             con.Location = new Point(640, 305);
+            con.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             con.Name = "con";
             con.Size = new Size(44, 23);
             con.TabIndex = 16;
+            con.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // ch
             // 
             ch.Location = new Point(741, 305);
+            ch.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             ch.Name = "ch";
             ch.Size = new Size(44, 23);
             ch.TabIndex = 17;
+            ch.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // LoreBox
             // 

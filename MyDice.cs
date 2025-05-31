@@ -16,6 +16,7 @@ namespace DnDProjekt
         {
             InitializeComponent();
             FormClosed += new FormClosedEventHandler(mDClosed);
+            new Kostky().loadKostek(flowLayoutPanel1, new Kostky().basicCommand());
         }
 
         private void mDClosed(object sender, FormClosedEventArgs e)
@@ -37,7 +38,8 @@ namespace DnDProjekt
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            flowLayoutPanel1.Controls.Clear();
+            new Kostky().loadKostek(flowLayoutPanel1, new Search().searchDice(textBox1.Text));
         }
 
         private void pridat_Click(object sender, EventArgs e)

@@ -42,10 +42,10 @@
             linkLabel1.LinkColor = Color.Black;
             linkLabel1.Location = new Point(12, 9);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(40, 15);
+            linkLabel1.Size = new Size(45, 15);
             linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Home";
+            linkLabel1.Text = "Ostatní";
             // 
             // button1
             // 
@@ -63,9 +63,9 @@
             label1.Cursor = Cursors.Hand;
             label1.Location = new Point(12, 36);
             label1.Name = "label1";
-            label1.Size = new Size(83, 15);
+            label1.Size = new Size(68, 15);
             label1.TabIndex = 4;
-            label1.Text = "My Characters";
+            label1.Text = "Mé Postavy";
             label1.Click += label1_Click;
             // 
             // label2
@@ -74,9 +74,9 @@
             label2.Cursor = Cursors.Hand;
             label2.Location = new Point(12, 67);
             label2.Name = "label2";
-            label2.Size = new Size(50, 15);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 5;
-            label2.Text = "My Dice";
+            label2.Text = "Mé Kostky";
             label2.Click += label2_Click;
             // 
             // textBox1

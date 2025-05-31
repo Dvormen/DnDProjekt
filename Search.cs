@@ -18,9 +18,12 @@ namespace DnDProjekt
             return command;
         }
 
-        public void searchDice(string input) 
+        public SqlCommand searchDice(string input) 
         {
-        
+            string query = "select id, nazev, kvantita, druh_kostky, mod_kostka from DnDkostka where nazev like @input";
+            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
+            command.Parameters.Add(new("@input", "%" + input + "%"));
+            return command;
         }
     }
 }

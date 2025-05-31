@@ -30,11 +30,18 @@ namespace DnDProjekt
             new LogInForm().Show();
         }
 
-        private void SignIn_Click(object sender, EventArgs e)// heslo nesmí být nic
+        private void SignIn_Click(object sender, EventArgs e)
         {
             string jmeno = username.Text;
             string heslo = password.Text;
             string heslok = passwordCheck.Text;
+            if (heslo.Equals("")) 
+            {
+                MessageBox.Show("Heslo nesmí být prázdné");
+            }
+            else 
+            {
+            
             if(heslo.Equals(heslok))
             {
                 Ucet ucet = new Ucet(jmeno,heslo);
@@ -53,6 +60,8 @@ namespace DnDProjekt
             {
                 MessageBox.Show("Hesla se neshodují");
             }
+            }
+            
         }
     }
 }

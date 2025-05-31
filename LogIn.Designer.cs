@@ -45,7 +45,7 @@
             LogIn.Name = "LogIn";
             LogIn.Size = new Size(96, 23);
             LogIn.TabIndex = 0;
-            LogIn.Text = "Log In";
+            LogIn.Text = "Přihlásit se";
             LogIn.UseVisualStyleBackColor = true;
             LogIn.Click += LogIn_Click;
             // 
@@ -54,12 +54,12 @@
             SignIn.AccessibleName = "";
             SignIn.AutoSize = true;
             SignIn.LinkColor = Color.Black;
-            SignIn.Location = new Point(205, 270);
+            SignIn.Location = new Point(177, 270);
             SignIn.Name = "SignIn";
-            SignIn.Size = new Size(43, 15);
+            SignIn.Size = new Size(90, 15);
             SignIn.TabIndex = 1;
             SignIn.TabStop = true;
-            SignIn.Text = "Sign In";
+            SignIn.Text = "Zaregistrovat se";
             SignIn.LinkClicked += SignIn_LinkClicked;
             // 
             // PasswordBox
@@ -79,39 +79,39 @@
             // Username
             // 
             Username.AutoSize = true;
-            Username.Location = new Point(111, 155);
+            Username.Location = new Point(69, 155);
             Username.Name = "Username";
-            Username.Size = new Size(60, 15);
+            Username.Size = new Size(102, 15);
             Username.TabIndex = 4;
-            Username.Text = "Username";
+            Username.Text = "Uživatelské jméno";
             // 
             // Password
             // 
             Password.AutoSize = true;
-            Password.Location = new Point(114, 202);
+            Password.Location = new Point(134, 202);
             Password.Name = "Password";
-            Password.Size = new Size(57, 15);
+            Password.Size = new Size(37, 15);
             Password.TabIndex = 5;
-            Password.Text = "Password";
+            Password.Text = "Heslo";
             // 
             // Title
             // 
             Title.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Title.AutoSize = true;
-            Title.Location = new Point(82, 40);
+            Title.Location = new Point(111, 40);
             Title.Name = "Title";
-            Title.Size = new Size(253, 15);
+            Title.Size = new Size(223, 15);
             Title.TabIndex = 6;
-            Title.Text = "Welcome to DnD Character and Dice Manager!";
+            Title.Text = "Výtejte v DnD Manageru Postav a Kostek!";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(57, 55);
+            label1.Location = new Point(136, 55);
             label1.Name = "label1";
-            label1.Size = new Size(317, 15);
+            label1.Size = new Size(166, 15);
             label1.TabIndex = 7;
-            label1.Text = "Log In or Sign In to view and edit your characters and dices";
+            label1.Text = "Přihlašte se nebo se registrujte";
             // 
             // LogInForm
             // 

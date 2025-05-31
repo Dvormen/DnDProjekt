@@ -43,9 +43,9 @@
             label3.Cursor = Cursors.Hand;
             label3.Location = new Point(12, 9);
             label3.Name = "label3";
-            label3.Size = new Size(40, 15);
+            label3.Size = new Size(45, 15);
             label3.TabIndex = 18;
-            label3.Text = "Home";
+            label3.Text = "Ostatní";
             label3.Click += label3_Click;
             // 
             // textBox1
@@ -71,9 +71,9 @@
             label1.Cursor = Cursors.Hand;
             label1.Location = new Point(12, 37);
             label1.Name = "label1";
-            label1.Size = new Size(83, 15);
+            label1.Size = new Size(68, 15);
             label1.TabIndex = 20;
-            label1.Text = "My Characters";
+            label1.Text = "Mé Postavy";
             label1.Click += label1_Click;
             // 
             // linkLabel1
@@ -82,10 +82,10 @@
             linkLabel1.LinkColor = Color.Black;
             linkLabel1.Location = new Point(12, 67);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(50, 15);
+            linkLabel1.Size = new Size(62, 15);
             linkLabel1.TabIndex = 21;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "My Dice";
+            linkLabel1.Text = "Mé Kostky";
             // 
             // flowLayoutPanel1
             // 
@@ -119,7 +119,7 @@
             Controls.Add(button1);
             Name = "MyDice";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "My Dice";
+            Text = "Mé Kostky";
             ResumeLayout(false);
             PerformLayout();
         }

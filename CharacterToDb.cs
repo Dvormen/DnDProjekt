@@ -50,6 +50,47 @@ namespace DnDProjekt
 
         public void vlozeniUpraveny(int id, int rasa, int classa, int subclassa, int gender, string jmeno, string prijmeni, decimal vek, decimal vyska, decimal vaha, string lore, decimal hp, decimal ac, decimal str, decimal dex, decimal con, decimal i, decimal wis, decimal ch, Image obr) 
         {
+            string query2 = "select strength, dexterity, constitution, inteligence, wisdom, charisma from DnDCharacter where id = @id";
+            SqlCommand command2 = new SqlCommand(query2,Singleton.GetInstance());
+            command2.Parameters.Add(new("@id", id));
+            SqlDataReader reader = command2.ExecuteReader();
+            int strength = 0, dexterity = 0, constitution = 0, inteligence = 0, wisdom = 0, charisma = 0;
+
+            if (reader.Read())
+            {
+                strength = reader.GetInt32(0);
+                dexterity = reader.GetInt32(1);
+                constitution = reader.GetInt32(2);
+                inteligence = reader.GetInt32(3);
+                wisdom = reader.GetInt32(4);
+                charisma = reader.GetInt32(5);
+            }
+            reader.Close();
+            if (strength - str != 0) 
+            {
+                upraveniMod(str,"Strength",id);
+            }
+            if (dexterity - dex != 0)
+            {
+                upraveniMod(dex, "Dexterity", id);
+            }
+            if (constitution - con != 0)
+            {
+                upraveniMod(con, "Constitution", id);
+            }
+            if (inteligence - i != 0)
+            {
+                upraveniMod(i, "Inteligence", id);
+            }
+            if (wisdom - wis != 0)
+            {
+                upraveniMod(wis, "Wisdom", id);
+            }
+            if (charisma - ch != 0)
+            {
+                upraveniMod(ch, "Charisma", id);
+            }
+
             string query = "update DnDCharacter set rasa = @rasa, classa = @classa, subClassa = @subclassa, gender_id = @gender, jmeno = @jmeno," +
                 " prijmeni = @prijmeni, vek = @vek, vyska = @vyska, vaha = @vaha, lore = @lore, max_Hp = @hp, armor_class = @ac, strength = @str," +
                 " constitution = @con, dexterity = @dex, inteligence = @int, wisdom = @wis, charisma = @ch, obrazek = @obr where id = @id";
@@ -75,6 +116,21 @@ namespace DnDProjekt
             command.Parameters.Add(new("@wis", wis));
             command.Parameters.Add(new("@ch", ch));
             command.Parameters.Add("@obr", SqlDbType.VarBinary).Value = obrDoDb ?? (object)DBNull.Value;
+            command.ExecuteNonQuery();
+        }
+
+        public void upraveniMod(decimal stat,string statS, int id) 
+        {
+            string query2 = "select id from DnDStats where stat = @stat";
+            SqlCommand command2 = new SqlCommand(query2, Singleton.GetInstance());
+            command2.Parameters.Add(new("@stat", statS));
+
+            int mod = new Kostky().GetMod(stat);
+            string query = $"update DnDKostka set mod_kostka = @mod where id_charakter = @id and stat_id = @stat";
+            SqlCommand command = new SqlCommand(query, Singleton.GetInstance());
+            command.Parameters.Add(new("@mod",mod));
+            command.Parameters.Add(new("@id",id));
+            command.Parameters.Add(new("@stat",command2.ExecuteScalar()));
             command.ExecuteNonQuery();
         }
 

@@ -26,7 +26,7 @@ id int primary key identity(1,1),
 druh varchar(50)
 )
 
-
+update DnDKostka set mod_kostka = 10 where stat_id = 
 
 create table DnDCharacter(
 id int primary key identity(1,1),

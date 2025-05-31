@@ -50,9 +50,9 @@
             label2.Cursor = Cursors.Hand;
             label2.Location = new Point(12, 67);
             label2.Name = "label2";
-            label2.Size = new Size(50, 15);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 11;
-            label2.Text = "My Dice";
+            label2.Text = "Mé Kostky";
             label2.Click += label2_Click;
             // 
             // button1
@@ -71,9 +71,9 @@
             label3.Cursor = Cursors.Hand;
             label3.Location = new Point(12, 9);
             label3.Name = "label3";
-            label3.Size = new Size(40, 15);
+            label3.Size = new Size(45, 15);
             label3.TabIndex = 13;
-            label3.Text = "Home";
+            label3.Text = "Ostatní";
             label3.Click += label3_Click;
             // 
             // linkLabel2
@@ -82,10 +82,10 @@
             linkLabel2.LinkColor = Color.Black;
             linkLabel2.Location = new Point(12, 37);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(83, 15);
+            linkLabel2.Size = new Size(68, 15);
             linkLabel2.TabIndex = 14;
             linkLabel2.TabStop = true;
-            linkLabel2.Text = "My Characters";
+            linkLabel2.Text = "Mé Postavy";
             // 
             // pridat
             // 
@@ -120,7 +120,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MyCharacters";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "My Characters";
+            Text = "Mé Postavy";
             ResumeLayout(false);
             PerformLayout();
         }

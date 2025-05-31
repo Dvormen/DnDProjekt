@@ -41,9 +41,9 @@
             // 
             // SignIn
             // 
-            SignIn.Location = new Point(173, 234);
+            SignIn.Location = new Point(164, 205);
             SignIn.Name = "SignIn";
-            SignIn.Size = new Size(75, 23);
+            SignIn.Size = new Size(87, 23);
             SignIn.TabIndex = 1;
             SignIn.Text = "Sign In";
             SignIn.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             Title.AutoSize = true;
             Title.Location = new Point(143, 23);
             Title.Name = "Title";
-            Title.Size = new Size(127, 15);
+            Title.Size = new Size(108, 15);
             Title.TabIndex = 2;
-            Title.Text = "Make an account here!";
+            Title.Text = "Zde se zaregistrujte";
             // 
             // username
             // 
@@ -82,40 +82,40 @@
             // UsernameL
             // 
             UsernameL.AutoSize = true;
-            UsernameL.Location = new Point(87, 70);
+            UsernameL.Location = new Point(45, 70);
             UsernameL.Name = "UsernameL";
-            UsernameL.Size = new Size(60, 15);
+            UsernameL.Size = new Size(102, 15);
             UsernameL.TabIndex = 6;
-            UsernameL.Text = "Username";
+            UsernameL.Text = "Uživatelské jméno";
             // 
             // PasswordL
             // 
             PasswordL.AutoSize = true;
-            PasswordL.Location = new Point(90, 117);
+            PasswordL.Location = new Point(110, 117);
             PasswordL.Name = "PasswordL";
-            PasswordL.Size = new Size(57, 15);
+            PasswordL.Size = new Size(37, 15);
             PasswordL.TabIndex = 7;
-            PasswordL.Text = "Password";
+            PasswordL.Text = "Heslo";
             // 
             // PasswordCheckL
             // 
             PasswordCheckL.AutoSize = true;
-            PasswordCheckL.Location = new Point(58, 158);
+            PasswordCheckL.Location = new Point(73, 158);
             PasswordCheckL.Name = "PasswordCheckL";
-            PasswordCheckL.Size = new Size(89, 15);
+            PasswordCheckL.Size = new Size(74, 15);
             PasswordCheckL.TabIndex = 8;
-            PasswordCheckL.Text = "Password again";
+            PasswordCheckL.Text = "Znovu Heslo";
             // 
             // LoginLink
             // 
             LoginLink.AutoSize = true;
             LoginLink.LinkColor = Color.Black;
-            LoginLink.Location = new Point(126, 203);
+            LoginLink.Location = new Point(170, 248);
             LoginLink.Name = "LoginLink";
-            LoginLink.Size = new Size(144, 15);
+            LoginLink.Size = new Size(81, 15);
             LoginLink.TabIndex = 9;
             LoginLink.TabStop = true;
-            LoginLink.Text = "Already have an Account?";
+            LoginLink.Text = "Už máte účet?";
             LoginLink.LinkClicked += LoginLink_LinkClicked;
             // 
             // SignInForm
