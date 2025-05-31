@@ -1,46 +1,77 @@
-Dungeons and Dragons Manager pro Postavy a kostky
-  Aplikace udělaná ve windows Forms která ukládá informace do databáze
+# Dungeons and Dragons Manager pro Postavy a Kostky
 
-Aplikace obsahuje:
-  Učty s encrypcí hesel
-  Možnost přidávat, upravovat a odstraňovat postavy
-  Možnost prohlížet si postavy ostatních
-  Možnost přidávat kostky a házek kostkama 
+Aplikace udělaná ve Windows Forms, která ukládá informace do databáze.
 
-Jak to stáhnout?
-  Potřebujete:
-  .NET 8.0 SDK
-  SQL databázi pro ukládání dat
-  NuGet package:
-  System.Data.SqlClient
+---
 
-Stahování
-  Otevřete visual studio
-  Klikněte na clone repository
-  Zadejte https://github.com/Dvormen/DnDProjekt.git jako lokaci repozitáře
-  V Solution Exploreru najděte App.config a otevřete ho
-Tam najdete
-  DataSource - Vložte jméno vašeho serveru
-  Database - Vložte jméno vaší databáze
-  Name - Vložte váš login
-  Password - Vložte vaše heslo
-  Open query.sql
-Spusťte soubor Sqlko.sql a SQLdata.sql ve vaší databázi
+## Aplikace obsahuje:
 
-Nainstalujte NUGET package jestli je nemáte
-spusťte aplikaci
-Po spuštění se objeví login a odtamtud se může uživatel přihlásit do databáze
+- Účty s encrypcí hesel  
+- Možnost přidávat, upravovat a odstraňovat postavy  
+- Možnost prohlížet si postavy ostatních  
+- Možnost přidávat kostky a házet kostkami  
 
-Dělání postav
-  Uživatel může v aplikaci vytvářep dnd postavy se staty a příběhem
-  Ostatní uživatelé si mohou postavy prohlédnout
+---
 
-Dělání kostek
-  Uživatel si může udělat své vlastní kostky a může k nim "připnout" stat postavy, kterou udělal a házet tak "za stat"
+## Jak to stáhnout?
 
-Problémy?
-Pokud nepoužijete MSSQL server tak vám možná aplikace nepoběží
+**Potřebujete:**
 
-Pokud máte nějaké stížnosti, bugy a nebo návrky jaké rasy a classy přidat, dejte mi vědět na emailu s předmětem DnDStížnost
+- .NET 8.0 SDK  
+- SQL databázi pro ukládání dat  
+- NuGet balíček:  
+  - `System.Data.SqlClient`  
 
-luky.dvorak07@gmail.com
+---
+
+## Stahování
+
+1. Otevřete **Visual Studio**
+2. Klikněte na **Clone repository**
+3. Zadejte jako lokaci repozitáře:
+   https://github.com/Dvormen/DnDProjekt.git
+4. V **Solution Exploreru** najděte `App.config` a otevřete ho
+
+V souboru `App.config` najdete následující řádky:
+
+- `DataSource` – Vložte jméno vašeho serveru  
+- `Database` – Vložte jméno vaší databáze  
+- `Name` – Vložte váš login  
+- `Password` – Vložte vaše heslo  
+
+5. Otevřete `query.sql`
+6. Spusťte soubory `Sqlko.sql` a `SQLdata.sql` ve vaší databázi
+
+7. Nainstalujte NuGet balíček, pokud ho ještě nemáte
+
+8. Spusťte aplikaci
+
+Po spuštění se objeví login, ze kterého se uživatel může přihlásit do databáze.
+
+---
+
+## Dělání postav
+
+Uživatel může v aplikaci vytvářet DnD postavy se staty a příběhem.  
+Ostatní uživatelé si tyto postavy mohou prohlédnout.
+
+---
+
+## Dělání kostek
+
+Uživatel si může vytvořit vlastní kostky a může k nim "připnout" stat postavy, kterou udělal – hází tak "za stat".
+
+---
+
+## Problémy?
+
+Pokud nepoužijete MSSQL server, aplikace vám možná nepoběží.
+
+---
+
+## Kontakt
+
+Pokud máte nějaké stížnosti, bugy nebo návrhy jaké rasy a classy přidat, dejte mi vědět na e-mail:
+
+**luky.dvorak07@gmail.com**  
+(předmět e-mailu: `DnDStížnost`)
