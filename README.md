@@ -1,77 +1,75 @@
 # Dungeons and Dragons Manager pro Postavy a Kostky
 
-Aplikace udělaná ve Windows Forms, která ukládá informace do databáze.
+Aplikace vytvořená ve Windows Forms, která ukládá informace do SQL databáze.
 
 ---
 
-## Aplikace obsahuje:
+## Funkce aplikace
 
 - Účty s encrypcí hesel  
 - Možnost přidávat, upravovat a odstraňovat postavy  
-- Možnost prohlížet si postavy ostatních  
-- Možnost přidávat kostky a házet kostkami  
+- Možnost prohlížet si postavy ostatních uživatelů  
+- Možnost přidávat vlastní kostky a házet s nimi (včetně vazby na staty postav)
 
 ---
 
-## Jak to stáhnout?
+## Požadavky
 
-**Potřebujete:**
-
-- .NET 8.0 SDK  
-- SQL databázi pro ukládání dat  
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- SQL databáze (doporučeno MSSQL Server)
 - NuGet balíček:  
-  - `System.Data.SqlClient`  
+  - `System.Data.SqlClient`
 
 ---
 
-## Stahování
+## Instalace
 
 1. Otevřete **Visual Studio**
 2. Klikněte na **Clone repository**
-3. Zadejte jako lokaci repozitáře:
-   https://github.com/Dvormen/DnDProjekt.git
-4. V **Solution Exploreru** najděte `App.config` a otevřete ho
-
-V souboru `App.config` najdete následující řádky:
-
-- `DataSource` – Vložte jméno vašeho serveru  
-- `Database` – Vložte jméno vaší databáze  
-- `Name` – Vložte váš login  
-- `Password` – Vložte vaše heslo  
-
-5. Otevřete `query.sql`
-6. Spusťte soubory `Sqlko.sql` a `SQLdata.sql` ve vaší databázi
-
-7. Nainstalujte NuGet balíček, pokud ho ještě nemáte
-
+3. Zadejte jako lokaci repozitáře:  
+   `https://github.com/Dvormen/DnDProjekt.git`
+4. V **Solution Exploreru** najděte a otevřete `App.config`
+5. Upravte následující hodnoty podle vaší databáze:
+   - `DataSource` – jméno vašeho SQL serveru  
+   - `Database` – název databáze  
+   - `Name` – vaše přihlašovací jméno  
+   - `Password` – vaše heslo  
+6. Otevřete a spusťte soubory `Sqlko.sql` a `SQLdata.sql` ve vaší databázi
+7. Nainstalujte potřebný NuGet balíček (`System.Data.SqlClient`)
 8. Spusťte aplikaci
 
-Po spuštění se objeví login, ze kterého se uživatel může přihlásit do databáze.
+Po spuštění se zobrazí login obrazovka, kde se můžete přihlásit do databáze.
 
 ---
 
-## Dělání postav
+## Vytváření postav
 
-Uživatel může v aplikaci vytvářet DnD postavy se staty a příběhem.  
-Ostatní uživatelé si tyto postavy mohou prohlédnout.
-
----
-
-## Dělání kostek
-
-Uživatel si může vytvořit vlastní kostky a může k nim "připnout" stat postavy, kterou udělal – hází tak "za stat".
+Uživatel může vytvářet DnD postavy, zadávat jejich statistiky a přidávat k nim příběh.  
+Tyto postavy si pak mohou prohlížet ostatní uživatelé.
 
 ---
 
-## Problémy?
+## Práce s kostkami
 
-Pokud nepoužijete MSSQL server, aplikace vám možná nepoběží.
+Uživatel si může vytvořit vlastní kostky a připnout je ke konkrétním statům postavy – při hodu se použije příslušná hodnota.
+
+---
+
+## Testování
+
+Projekt byl otestován mojí sestrou, spolužákem a mým bývalým spolužákem, ještě jim takto chci poděkovat
+
+---
+
+## Známé problémy
+
+- Pokud nepoužijete MSSQL server, aplikace nemusí fungovat správně.
 
 ---
 
 ## Kontakt
 
-Pokud máte nějaké stížnosti, bugy nebo návrhy jaké rasy a classy přidat, dejte mi vědět na e-mail:
+Pokud máte jakékoli stížnosti, bugy nebo návrhy (např. na nové rasy nebo classy), napište mi na:
 
 **luky.dvorak07@gmail.com**  
 (předmět e-mailu: `DnDStížnost`)
