@@ -240,8 +240,8 @@ namespace DnDProjekt
                           SqlCommand delCmd = new SqlCommand("delete from DnDKostka where id = @id", Singleton.GetInstance());
                           delCmd.Parameters.AddWithValue("@id", kostkaId);
                           delCmd.ExecuteNonQuery();
-                    }
                           flp.Controls.Remove(itemPanel); 
+                    }
                   };
                   itemPanel.Controls.Add(infoLabel);
                   itemPanel.Controls.Add(btnHodit);

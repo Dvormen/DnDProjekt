@@ -100,9 +100,9 @@
             Title.AutoSize = true;
             Title.Location = new Point(111, 40);
             Title.Name = "Title";
-            Title.Size = new Size(223, 15);
+            Title.Size = new Size(220, 15);
             Title.TabIndex = 6;
-            Title.Text = "Výtejte v DnD Manageru Postav a Kostek!";
+            Title.Text = "Vítejte v DnD Manageru Postav a Kostek!";
             // 
             // label1
             // 
