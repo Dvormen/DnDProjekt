@@ -249,21 +249,25 @@ namespace DnDProjekt
         /// <param name="name"> jméno přidávané postavy </param>
         /// <param name="surname"> příjmení přidávané postavy </param>
         /// <returns> true nebo false podle toho jestli tam je postava se stejným jménem </returns>
-        public bool nameCheck(string name, string surname) 
+        public bool nameCheck(string name, string surname)
         {
             string query1 = "select jmeno, prijmeni from DnDCharacter where id = @id";
-            SqlCommand command1 = new SqlCommand(query1, Singleton.GetInstance());
-            command1.Parameters.Add(new("@id", Seshn.LoggedUcet.Id));
-            SqlDataReader r = command1.ExecuteReader();
-            string jmeno = r.GetString(0);
-            string prijmeni = r.GetString(1);
-            if (jmeno.Equals(name) && prijmeni.Equals(surname)) 
+            using (SqlCommand command1 = new SqlCommand(query1, Singleton.GetInstance()))
             {
-                return true;
-            }
-            else 
-            {
-                return false;
+                command1.Parameters.Add(new SqlParameter("@id", Seshn.LoggedUcet.Id));
+                using (SqlDataReader r = command1.ExecuteReader())
+                {
+                    if (r.Read())
+                    {
+                        string jmeno = r.GetString(0);
+                        string prijmeni = r.GetString(1);
+                        return jmeno.Equals(name) && prijmeni.Equals(surname);
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
     }
