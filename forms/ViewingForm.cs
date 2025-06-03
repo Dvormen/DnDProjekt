@@ -64,9 +64,9 @@ namespace DnDProjekt
                 pohlavi.Text += " " + reader.GetString(4);
                 label2.Text += " " + reader.GetString(5);
                 label3.Text += " " + reader.GetString(6);
-                label9.Text += " " + reader.GetInt32(7) + " Cm";
-                label7.Text += " " + reader.GetInt32(8) + " Kg";
-                label8.Text += " " + reader.GetInt32(9) + " Let";
+                label9.Text += " " + reader.GetInt32(7) + " Let";
+                label7.Text += " " + reader.GetInt32(8) + " Cm";
+                label8.Text += " " + reader.GetInt32(9) + " Kg";
                 LoreBox.Text += " " + reader.GetString(10);
                 label10.Text += " " + reader.GetInt32(11);
                 label14.Text += " " + reader.GetInt32(12);
